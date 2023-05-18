@@ -96,7 +96,6 @@ class ContractCall(ManagerAccessMixin):
 
 
 class ContractCallHandler(ManagerAccessMixin):
-
     contract: "ContractInstance"
     abis: List[MethodABI]
 
@@ -180,7 +179,6 @@ def _select_method_abi(abis: List[MethodABI], args: Union[Tuple, List]) -> Metho
 
 
 class ContractTransaction(ManagerAccessMixin):
-
     abi: MethodABI
     address: AddressType
 
