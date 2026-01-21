@@ -13,4 +13,9 @@ All agents must follow these rules:
 7) Update dependency lockfiles when adding or removing Python dependencies.
 8) If the branch you're assigned to work on tracks a remote (e.g. origin/main or upstream/awesome-feature), fetch and fast-forward/rebase to the latest remote state before you begin your work so you start from an up-to-date base.
 
+9) Maximize the use of caching in GitHub workflow files to minimize run duration.
+10) Use one of `paths` or `paths-ignore` in every workflow file to make sure workflows only run when required.
+11) All mypy configuration (flags, overrides, per-module ignores, and file targets) should go in pyproject.toml. Do not split config across CLI args, mypy.ini, setup.cfg, or workflow steps.
+12) Centralize pytest settings (flags, markers, ignore patterns, and targets) in pyproject.toml, pytest.ini, setup.cfg, or tox.ini; workflows/hooks should call pytest without inline args.
+13) Keep base image tags pinned.
 Reference: https://www.conventionalcommits.org/en/v1.0.0/
